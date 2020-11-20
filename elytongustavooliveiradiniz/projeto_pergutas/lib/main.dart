@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import './questionario.dart';
 import './resultado.dart';
+=======
+import './questao.dart';
+import './resposta.dart';
+>>>>>>> master
 
 main() => runApp(PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp> {
   var _perguntaSelecionada = 0;
+<<<<<<< HEAD
   var _pontuacaoTotal = 0;
   final _perguntas = const [
     {
@@ -55,6 +61,13 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
   bool get temPerguntaSelecionada {
     return _perguntaSelecionada < _perguntas.length;
+=======
+
+  void _responder() {
+    setState(() {
+      _perguntaSelecionada++;
+    });
+>>>>>>> master
   }
 
   @override
@@ -62,7 +75,19 @@ class _PerguntaAppState extends State<PerguntaApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+<<<<<<< HEAD
           title: Text('Perguntas'),
+=======
+          title: Text('Pegurtas1'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Questao(perguntas[_perguntaSelecionada]),
+            Resposta('Resposta 1', _responder),
+            Resposta('Resposta 2', _responder),
+            Resposta('Resposta 3', _responder),
+          ],
+>>>>>>> master
         ),
         body: temPerguntaSelecionada
             ? Questionario(
