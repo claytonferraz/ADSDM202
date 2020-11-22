@@ -9,8 +9,24 @@ class AbordagemTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(abordagem.nome),
-      subtitle: Text(abordagem.prefixo),
-    );
+        title: Text(abordagem.nome),
+        subtitle: Text(abordagem.prefixo),
+        trailing: Container(
+          width: 100,
+          child: Row(
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.edit),
+                color: Colors.blue,
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.delete),
+                color: Colors.red,
+                onPressed: () {},
+              )
+            ],
+          ),
+        ));
   }
 }

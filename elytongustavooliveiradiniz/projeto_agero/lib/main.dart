@@ -1,12 +1,7 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_agero/data/views/abordagem_list.dart';
 
-Void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,8 +9,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'AGERO ABORDAGENS',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity),
       home: AbordagemLista(),
     );
   }
