@@ -44,10 +44,21 @@ class _AbordagemListaState extends State<AbordagemLista> {
             ? ListView.builder(
                 itemCount: _list.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    child: ListTile(
-                      title: Text(_list[index]),
+                  return Dismissible(
+                    background: Container(
+                      color: Colors.red,
                     ),
+                    onDismissed: (direction) {
+                      setState(() {
+                        _list.removeAt(index);
+                      });
+                    },
+                    child: Card(
+                      child: ListTile(
+                        title: Text(_list[index]),
+                      ),
+                    ),
+                    key: Key(_list[index]),
                   );
                 },
               )
