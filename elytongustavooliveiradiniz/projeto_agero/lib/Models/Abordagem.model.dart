@@ -7,7 +7,7 @@ class Abordagem {
   final String destino;
   final String quantidadeDePassageiros;
 
-  Abordagem(
+  const Abordagem(
       {this.idAbordagem,
       this.nomeDaEmpresa,
       this.prefixo,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_agero/Provider/Abordagem.provider.dart';
+import 'package:projeto_agero/Widgets/ListaAbordagem.widget.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,7 +29,18 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             )
-          : Text('S'),
+          : SingleChildScrollView(
+              child: Container(
+                width: width,
+                height: heigth,
+                child: ListView.builder(
+                  itemCount: abordagemProvider.count,
+                  itemBuilder: (context, index) => ListaAbordagem(
+                    abordagemProvider.byIndex(index),
+                  ),
+                ),
+              ),
+            ),
     );
   }
 }
